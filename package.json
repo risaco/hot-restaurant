@@ -1,0 +1,24 @@
+{
+  "name": "hot-restaurant",
+  "version": "1.0.0",
+  "description": "Full-stack web application using node.js, express, html",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/risaco/hot-restaurant.git"
+  },
+  "author": "meg, elijah, jared, rhia, caio, dan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/risaco/hot-restaurant/issues"
+  },
+  "homepage": "https://github.com/risaco/hot-restaurant#readme",
+  "dependencies": {
+    "body-parser": "^1.18.1",
+    "express": "^4.15.4"
+  }
+}
