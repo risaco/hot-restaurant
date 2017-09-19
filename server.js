@@ -1,3 +1,4 @@
+
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -21,7 +22,7 @@ function Customer(customerName, phoneNumber, customerEmail, customerID) {
     this.customerID = customerID;
 }
 
-var testCustomer = new Customer("Testing", "Testing", "Testing", "Testing");
+// var testCustomer = new Customer("Testing", "Testing", "Testing", "Testing");
 
 var customerArray = [];
 var reservation = [];
@@ -31,11 +32,12 @@ app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
 });
 
-app.get("/tables", function(req, res) {
+  app.get("/tables", function(req, res) {
+
     res.sendFile(path.join(__dirname, "tables.html"));
 });
 
-app.get("/reserve", function(req, res) {
+  app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
@@ -49,9 +51,9 @@ app.get("/api/:tables?", function(req, res) {
     return res.json(reservation);
 });
 
-app.post("/api/new", function(req, res) {
+app.post("/reserve", function(req, res) {
     var newCustomer = req.body;
-    newCustomer.routeName = newCustomer.name.replace(/\s+/g, "").toLowerCase();
+    // newCustomer.routeName = newCustomer.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newCustomer);
 
@@ -64,6 +66,6 @@ app.post("/api/new", function(req, res) {
         waitList.push(newCustomer);
         console.log("Sorry, reservations are full. You have been added to the waitlist.")
     }
-
+  
     res.json(newCustomer);
-});
+  });

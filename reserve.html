@@ -90,7 +90,7 @@
         // We use this instead of explicitly saying the URL is localhost:3001 because the url will change when we deploy.
         var currentURL = window.location.origin;
 
-        $.post(currentURL + "/tables", newReservation,
+        $.post(currentURL + "/reserve", newReservation,
             function(data) {
 
                 // If a table is available... tell user they are booked.
@@ -115,7 +115,7 @@
 
     });
     </script>
-    <script type="text/javascript" src="server.js"></script>
+    <!-- <script type="text/javascript" src="server.js"></script> -->
 </body>
 
 </html>
