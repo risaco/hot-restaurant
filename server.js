@@ -1,3 +1,4 @@
+
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -31,11 +32,11 @@ app.listen(PORT, function() {
     res.sendFile(path.join(__dirname, "home.html"));
   });
 
-  app.get("/", function(req, res) {
+  app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
   });
 
-  app.get("/", function(req, res) {
+  app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
   });
 
@@ -63,4 +64,3 @@ app.listen(PORT, function() {
   
     res.json(newCustomer);
   });
-
