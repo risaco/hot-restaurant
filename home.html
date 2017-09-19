@@ -1,25 +1,23 @@
-<html lang="en">
-<script type="text/javascript">
-window["_gaUserPrefs"] = { ioo: function() { return true; } }
-</script>
-
-<head>
+<html lang="en"><script type="text/javascript">window["_gaUserPrefs"] = { ioo : function() { return true; } }</script><head>
     <meta charset="UTF-8">
     <title>Tables Page</title>
-    <!-- Latest compiled and minified CSS & JS -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <script src="https://code.jquery.com/jquery.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-</head>
 
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+</head>
 <body>
+
     <div class="container">
+
         <div class="jumbotron">
             <h1 class="text-center"><span class="glyphicon glyphicon-fire"></span> Hot Restaurant</h1>
             <hr>
-            <h2 class="text-center">Current Reservations and Waiting List</h2>
+            <h2 class="text-center">We only have 5 tables! Book your seat before they all are gone!</h2>
             <br>
+
             <div class="text-center">
+<<<<<<< HEAD
                 <a href="/reserve">
                     <button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button>
                 </a>
@@ -48,17 +46,23 @@ window["_gaUserPrefs"] = { ioo: function() { return true; } }
                         <!-- Waitlist is filled-in here. -->
                     </div>
                 </div>
+=======
+                <a href="/tables"><button type="button" class="btn btn-lg btn-primary"><span class="glyphicon glyphicon-list-alt"></span> View Tables</button></a>
+                <a href="/reserve"><button type="button" class="btn btn-lg btn-danger"><span class="glyphicon glyphicon-credit-card"></span> Make Reservation</button></a>
+>>>>>>> 6f2cc00fa681021f937909a624083c66b7c57a0e
             </div>
-        </div>
-        <footer class="footer">
-            <div class="container">
-                <p>Control Panel</p>
-                <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
-            </div>
-        </footer>
-    </div>
-    <!-- BELOW CODE IS CRITICAL. IT HANDLES HOW FORM DATA IS LOADED FROM OUR SERVER -->
-    <!-- <script type="text/javascript" src="js.js"></script> -->
-</body>
 
-</html>
+        </div>
+
+    <footer class="footer">
+      <div class="container">
+            <p><a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
+      </div>
+    </footer>
+
+    </div>
+
+
+
+
+</body></html>
