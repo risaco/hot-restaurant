@@ -1,11 +1,4 @@
 
-var app = express();
-var PORT = process.env.PORT || 3000;
-
-app.listen(PORT, function() {
-  console.log("App listening on PORT " + PORT);
-});
-=======
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
@@ -46,8 +39,6 @@ app.listen(PORT, function() {
   app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
   });
-<<<<<<< HEAD
-=======
 
   app.get("/api/:tables?", function(req, res) {
     var chosen = req.params.reservation;
@@ -73,5 +64,3 @@ app.listen(PORT, function() {
   
     res.json(newCustomer);
   });
-
->>>>>>> 6f2cc00fa681021f937909a624083c66b7c57a0e
