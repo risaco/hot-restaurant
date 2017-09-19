@@ -51,7 +51,7 @@
 	    <footer class="footer">
 	      <div class="container">
 	      	<p>Control Panel</p>
-	        <p><a href="#" id="clear">Clear Table</a> | <a href="/api/tables">API Table Link</a> | <a href="/api/waitlist">API Wait List</a></p>
+	        <p><a href="#" id="clear">Clear Table</a> | <a href="/tables">API Table Link</a> | <a href="/waitlist">API Wait List</a></p>
 	      </div>
 	    </footer>
 
@@ -74,12 +74,12 @@
 		var currentURL = window.location.origin;
 
 		// The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-		$.ajax({url: currentURL + "/api/tables", method: "GET"})
+		$.ajax({url: currentURL + "/tables", method: "GET"})
 			.done(function(tableData) {
 
 				// Here we are logging the URL so we have access to it for troubleshooting
 				console.log("------------------------------------");
-				console.log("URL: " + currentURL + "/api/tables");
+				console.log("URL: " + currentURL + "/tables");
 				console.log("------------------------------------");
 
 				// Here we then log the NYTData to console, where it will show up as an object.
@@ -111,12 +111,12 @@
 		var currentURL = window.location.origin;
 
 		// The AJAX function uses the URL of our API to GET the data associated with it (initially set to localhost)
-		$.ajax({url: currentURL + "/api/waitlist", method: "GET"})
+		$.ajax({url: currentURL + "/waitlist", method: "GET"})
 			.done(function(waitlistData) {
 
 				// Here we are logging the URL so we have access to it for troubleshooting
 				console.log("------------------------------------");
-				console.log("URL: " + currentURL + "/api/waitlist");
+				console.log("URL: " + currentURL + "/waitlist");
 				console.log("------------------------------------");
 
 				// Here we then log the NYTData to console, where it will show up as an object.
@@ -144,7 +144,7 @@
 	function clearTable(){
 
 		var currentURL = window.location.origin;
-		$.ajax({url: currentURL + "/api/clear", method: "POST"})
+		$.ajax({url: currentURL + "/clear", method: "POST"})
 
 	}
 
