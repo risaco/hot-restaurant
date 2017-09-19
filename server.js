@@ -39,6 +39,10 @@ app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
 });
 
+app.get("/server.js", function(req, res) {
+    res.sendFile(path.join(__dirname, "server.js"));
+});
+
 app.get("/api/:tables?", function(req, res) {
     var chosen = req.params.reservation;
 
