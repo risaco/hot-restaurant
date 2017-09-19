@@ -12,45 +12,45 @@ app.use(bodyParser.json({ type: "application/vnd.api+json" }));
 
 app.listen(PORT, function() {
     console.log("App listening on PORT " + PORT);
-  });
+});
 
-  function Customer (customerName, phoneNumber, customerEmail, customerID) {
-      this.customerName = customerName;
-      this.phoneNumber = phoneNumber;
-      this.customerEmail = customerEmail;
-      this.customerID = customerID;
-  }
+function Customer(customerName, phoneNumber, customerEmail, customerID) {
+    this.customerName = customerName;
+    this.phoneNumber = phoneNumber;
+    this.customerEmail = customerEmail;
+    this.customerID = customerID;
+}
 
-  var testCustomer = new Customer("Testing", "Testing", "Testing", "Testing");
+var testCustomer = new Customer("Testing", "Testing", "Testing", "Testing");
 
-  var customerArray = [];
-  var reservation = [];
-  var waitList = [];
+var customerArray = [];
+var reservation = [];
+var waitList = [];
 
-  app.get("/", function(req, res) {
+app.get("/", function(req, res) {
     res.sendFile(path.join(__dirname, "home.html"));
-  });
+});
 
-  app.get("/", function(req, res) {
+app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
-  });
+});
 
-  app.get("/", function(req, res) {
+app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
-  });
+});
 
-  app.get("/api/:tables?", function(req, res) {
+app.get("/api/:tables?", function(req, res) {
     var chosen = req.params.reservation;
-  
-    return res.json(reservation);
-  });
 
-  app.post("/api/new", function(req, res) {
+    return res.json(reservation);
+});
+
+app.post("/api/new", function(req, res) {
     var newCustomer = req.body;
     newCustomer.routeName = newCustomer.name.replace(/\s+/g, "").toLowerCase();
-  
+
     console.log(newCustomer);
-  
+
     customerArray.push(newCustomer);
 
     if (customerArray.length < 5) {
@@ -60,7 +60,6 @@ app.listen(PORT, function() {
         waitList.push(newCustomer);
         console.log("Sorry, reservations are full. You have been added to the waitlist.")
     }
-  
-    res.json(newCustomer);
-  });
 
+    res.json(newCustomer);
+});
