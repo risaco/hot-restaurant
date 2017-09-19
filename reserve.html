@@ -72,14 +72,14 @@
     $(".submit").on("click", function() {
 
         // Here we grab the form elements
-        var newReservation = {
+        var newCustomer = {
             customerName: $('#reserve_name').val().trim(),
             phoneNumber: $('#reserve_phone').val().trim(),
             customerEmail: $('#reserve_email').val().trim(),
             customerID: $('#reserve_uniqueID').val().trim()
         };
 
-        console.log(newReservation);
+        console.log(newCustomer);
 
         // This line is the magic. It's very similar to the standard ajax function we used.
         // Essentially we give it a URL, we give it the object we want to send, then we have a "callback".

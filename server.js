@@ -1,6 +1,7 @@
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+var http = require("http");
 
 var app = express();
 var PORT = 3000;
@@ -21,8 +22,6 @@ function Customer(customerName, phoneNumber, customerEmail, customerID) {
     this.customerID = customerID;
 }
 
-var testCustomer = new Customer("Testing", "Testing", "Testing", "Testing");
-
 var customerArray = [];
 var reservation = [];
 var waitList = [];
@@ -33,25 +32,25 @@ app.get("/", function(req, res) {
 
 app.get("/tables", function(req, res) {
     res.sendFile(path.join(__dirname, "tables.html"));
+    displayCustomer();
 });
 
 app.get("/reserve", function(req, res) {
     res.sendFile(path.join(__dirname, "reserve.html"));
+});     
+
+app.get("/server.js", function(req, res) {
+    res.sendFile(path.join(__dirname, "server.js"));
 });
 
-app.get("/api/:tables?", function(req, res) {
-    var chosen = req.params.reservation;
-
-    return res.json(reservation);
-});
-
-app.post("/api/new", function(req, res) {
+app.post("/reserve", function(req, res) {
     var newCustomer = req.body;
-    newCustomer.routeName = newCustomer.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newCustomer);
 
     customerArray.push(newCustomer);
+
+    console.log(customerArray);
 
     if (customerArray.length < 5) {
         reservation.push(newCustomer);
