@@ -21,7 +21,7 @@ function Customer(customerName, phoneNumber, customerEmail, customerID) {
     this.customerID = customerID;
 }
 
-var testCustomer = new Customer("Testing", "Testing", "Testing", "Testing");
+// var testCustomer = new Customer("Testing", "Testing", "Testing", "Testing");
 
 var customerArray = [];
 var reservation = [];
@@ -49,9 +49,9 @@ app.get("/api/:tables?", function(req, res) {
     return res.json(reservation);
 });
 
-app.post("/api/new", function(req, res) {
+app.post("/reserve", function(req, res) {
     var newCustomer = req.body;
-    newCustomer.routeName = newCustomer.name.replace(/\s+/g, "").toLowerCase();
+    // newCustomer.routeName = newCustomer.name.replace(/\s+/g, "").toLowerCase();
 
     console.log(newCustomer);
 
